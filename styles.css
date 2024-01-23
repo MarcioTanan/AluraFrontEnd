@@ -49,3 +49,9 @@ h1 {
     font-size: 14px;
     font-family: "Dm Sans", sans-serif;
 }
+
+.library {
+    background-color: #121212;
+    border-radius: 8px;
+    display: flex;
+}
