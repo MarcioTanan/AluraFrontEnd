@@ -3,15 +3,15 @@ const playlistContainer = document.getElementById("result-playlists");
 const searchInput = document.getElementById("search-input");
 
 function requestApi(searchTerm) {
-  fetch(`http://localhost:3000/artists?name_like=${searchTerm}`)
+  fetch(`http://localhost:4000/artists?name_like=${searchTerm}`)
     .then((response) => response.json())
     .then((results) => displayResults(results));
 }
 
 function displayResults(results) {
   hidePlaylists();
-  const artistImage = document.getElementById("artist-img");
-  const artistName = document.getElementById("artist-name");
+  const artistImage = document.getElementById('artist-img');
+  const artistName = document.getElementById('artist-name');
 
   results.forEach((element) => {
     artistImage.src = element.urlImg;
@@ -24,7 +24,7 @@ function hidePlaylists() {
   playlistContainer.classList.add("hidden");
 }
 
-searchInput.addEventListener("input", function () {
+document.addEventListener("input", function () {
   const searchTerm = searchInput.value.toLowerCase();
   if (searchTerm === "") {
     resultArtist.classList.add("hidden");
